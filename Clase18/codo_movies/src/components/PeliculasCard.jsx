@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom"
 import "./PeliculasCard.css"
 
 export const PeliculasCard = ({pelicula})=>{
@@ -6,8 +7,10 @@ export const PeliculasCard = ({pelicula})=>{
 
     return(
         <li className="moviesCard">
-            <img className="moviesImage" src={imgURL} alt="" />
-            <div> {pelicula.title} </div>
+            <Link to={`/pelicula/${pelicula.id}`}>
+                <img className="moviesImage" src={imgURL} alt={pelicula.title} />
+                <div> {pelicula.title} </div>
+            </Link>
         </li>
-    )
-}
+    );
+};
